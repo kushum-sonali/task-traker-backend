@@ -3,7 +3,11 @@ const app= express();
 app.use(express.json());
 const cors=require('cors');
 const port= process.env.PORT||3000;
-app.use(cors());
+app.use(cors({
+  origin: 'https://task-traker-frontend.vercel.app',  // Allow only your frontend origin
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],  // Specify allowed methods
+  credentials: true,  // Include credentials if needed
+}));
 const bcrypt= require('bcrypt')
 const jwt= require('jsonwebtoken');
 require('./mongodb')
