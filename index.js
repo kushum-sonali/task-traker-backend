@@ -12,7 +12,7 @@ const bcrypt= require('bcrypt')
 const jwt= require('jsonwebtoken');
 require('./mongodb')
 const User= require('./userModel');
-const Task= require('./todomodel');
+const Task= require('./todoModel');
 
 app.get("/tasks/:id",async(req,res,next)=>{
   try{
